@@ -14,7 +14,9 @@ export const ToggleTheme = () => {
     <Icon
       name={isDark() ? 'moon' : 'sun'}
       type="feather"
-      color={colors.black}
+      color={colors.surface}
+      reverseColor={colors.black}
+      reverse
       onPress={toggle}
     />
   );
