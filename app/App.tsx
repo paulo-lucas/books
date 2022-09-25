@@ -1,15 +1,16 @@
 import React from 'react';
-import { Text } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { createTheme, ThemeProvider } from '@rneui/themed';
-
-const theme = createTheme({});
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { ThemeProvider } from '@rneui/themed';
+import theme from '@app/theme';
+import Toggle from '@app/components/ToggleTheme';
 
 const App = () => {
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
-        <Text>app</Text>
+        <SafeAreaView>
+          <Toggle />
+        </SafeAreaView>
       </ThemeProvider>
     </SafeAreaProvider>
   );
