@@ -1,18 +1,10 @@
 import React from 'react';
 import { useThemeMode, Button } from '@rneui/themed';
 
-const ToggleTheme = () => {
+export const ToggleTheme = () => {
   const { mode, setMode } = useThemeMode();
 
-  return (
-    <Button
-      onPress={() => {
-        setMode('dark');
-        console.log(mode);
-      }}
-      title={mode}
-    />
-  );
-};
+  const toggle = () => setMode(mode === 'light' ? 'dark' : 'light');
 
-export default ToggleTheme;
+  return <Button onPress={toggle} title={mode} />;
+};
