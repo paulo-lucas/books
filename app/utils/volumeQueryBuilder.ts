@@ -1,7 +1,7 @@
-import { VolumeSearchRequest } from '@app/interfaces/volume';
+import { VolumeSearchQuery } from '@app/interfaces/volume';
 
-export const volumeQueryBuilder = (request: VolumeSearchRequest): string => {
-  const { search, author, title, publisher } = request;
+export const volumeQueryBuilder = (fields: VolumeSearchQuery): string => {
+  const { search, author, title, publisher } = fields;
   let query = '';
 
   if (search) {

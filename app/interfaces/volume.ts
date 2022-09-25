@@ -1,14 +1,20 @@
 export interface VolumeSearchRequest {
-  search?: string;
-  title?: string;
-  author?: string;
-  publisher?: string;
+  query: VolumeSearchQuery;
+  startIndex: number;
+  maxResults: number;
 }
 
 export interface VolumeSearchResponse {
   kind: string;
   totalItems: number;
   items: Array<Volume>;
+}
+
+export interface VolumeSearchQuery {
+  search?: string;
+  title?: string;
+  author?: string;
+  publisher?: string;
 }
 
 export interface VolumeInfo {
