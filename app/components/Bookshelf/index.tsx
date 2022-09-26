@@ -21,7 +21,8 @@ export const Bookshelf: React.FC<BookshelfProps> = () => {
     const identifier =
       item.volumeInfo.industryIdentifiers?.find(id => id.type === 'ISBN_13')
         ?.identifier ??
-      item.volumeInfo.industryIdentifiers?.[0].identifier ??
+      item.volumeInfo.industryIdentifiers?.find(id => id.type.includes('ISBN'))
+        ?.identifier ??
       item.id;
 
     return (
