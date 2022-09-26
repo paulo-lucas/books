@@ -7,6 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import { Image } from '@rneui/themed';
+import FavoriteButton from './FavoriteButton';
 
 interface BookProps {
   title: string;
@@ -26,6 +27,11 @@ const Book: React.FC<BookProps> = ({
 
   return (
     <TouchableOpacity style={styles.touchable}>
+      <FavoriteButton
+        style={styles.favorite}
+        checked={true}
+        onCheck={() => {}}
+      />
       <View style={styles.container}>
         <View style={styles.shadow}>
           <Image
@@ -50,11 +56,18 @@ const Book: React.FC<BookProps> = ({
 const styles = StyleSheet.create({
   touchable: {
     width: '50%',
+    position: 'relative',
+  },
+  favorite: {
+    position: 'absolute',
+    right: 30,
+    zIndex: 1,
   },
   container: {
     width: '100%',
     paddingHorizontal: 10,
-    paddingBottom: 25,
+    paddingBottom: 20,
+    paddingTop: 5,
     alignItems: 'center',
     justifyContent: 'center',
   },
