@@ -7,7 +7,7 @@ import React, {
 import { BooksContextData } from '@app/interfaces/booksContext';
 import { booksReducer, booksInitialState } from '@app/states/BooksReducer';
 import { useDebounce } from '@app/hooks';
-import { searchVolumes } from '@app/services';
+import { searchVolumes, storeFavorites, getFavorites } from '@app/services';
 import { Alert } from 'react-native';
 import { useCallback } from 'react';
 
@@ -23,18 +23,35 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
   const onClearSearch = () => dispatch({ type: 'clear' });
 
-  const toggleFavorite = () => setFilterByFavorites(!filterByFavorites);
+  const toggleFavoriteFilter = () => setFilterByFavorites(!filterByFavorites);
+
+  const toggleOrderBy = () =>
+    setOrderBy(orderBy === 'newest' ? 'relevance' : 'newest');
 
   const isFavorite = (isbn: string) => favorites.includes(isbn);
 
+  const toggleFavorite = (isbn: string) => {
+    let updatedFavorites;
+
+    if (favorites.includes(isbn)) {
+      updatedFavorites = favorites.filter(fav => fav !== isbn);
+    } else {
+      updatedFavorites = [...favorites, isbn];
+    }
+
+    setFavorites(updatedFavorites);
+    storeFavorites(updatedFavorites);
+  };
+
   const fetchBooks = useCallback(
-    async (page: number = 0) => {
-      if (!searchText) {
+    async (page: number, searchFromDebounce?: string) => {
+      if (!searchText && !searchFromDebounce) {
         return onClearSearch();
       }
 
+      const search = searchFromDebounce ?? searchText;
       const isbn = filterByFavorites ? favorites : [];
-      const q = { search: searchText, isbn };
+      const q = { search, isbn };
       const { itemsPerPage: maxResults } = books;
       const startIndex = page * maxResults;
 
@@ -47,7 +64,12 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
           orderBy,
         });
 
-        dispatch({ type: 'update', total: data.totalItems, data: data.items });
+        dispatch({
+          type: 'update',
+          total: data.totalItems,
+          data: data.items ?? [],
+        });
+
         setRefreshing(false);
       } catch (err) {
         Alert.alert('Could not retrieve books.');
@@ -60,10 +82,10 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
   const onChangeSearch = (text: string) => {
     setSearchText(text);
-    debounceSearch();
+    debounceSearch(0, text);
   };
 
-  const refreshBooks = (page?: number) => {
+  const refreshBooks = (page: number = 0) => {
     fetchBooks(page);
   };
 
@@ -74,8 +96,10 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
     searchText,
     onChangeSearch,
     onClearSearch,
-    toggleFavorite,
+    toggleOrderBy,
+    toggleFavoriteFilter,
     isFavorite,
+    toggleFavorite,
   };
 
   return (

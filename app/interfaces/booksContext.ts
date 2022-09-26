@@ -12,7 +12,9 @@ export interface BooksContextData {
   onChangeSearch(text: string): void;
   books: BooksState;
   refreshing: boolean;
-  toggleFavorite(favorite: string): void;
+  toggleOrderBy(): void;
+  toggleFavoriteFilter(): void;
+  toggleFavorite(isbn: string): void;
   isFavorite(favorite: string): boolean;
   onClearSearch(): void;
   refreshBooks(page?: number): void;
