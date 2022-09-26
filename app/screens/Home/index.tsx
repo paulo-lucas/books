@@ -1,11 +1,12 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { Bookshelf } from '@app/components';
+import { Bookshelf, SearchBar } from '@app/components';
 
 function HomeScreen() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View>
+      <SearchBar />
       <Bookshelf />
     </View>
   );
