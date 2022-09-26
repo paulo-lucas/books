@@ -24,5 +24,7 @@ export const volumeQueryBuilder = (fields: VolumeSearchQuery): string => {
     query += `+${isbn.join('|')}`;
   }
 
+  query = query.replace(/^\+/, '');
+
   return query;
 };
