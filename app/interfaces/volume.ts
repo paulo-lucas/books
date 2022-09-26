@@ -1,7 +1,8 @@
 export interface VolumeSearchRequest {
-  query: VolumeSearchQuery;
+  q: VolumeSearchQuery;
   startIndex: number;
   maxResults: number;
+  orderBy: 'newest' | 'relevance';
 }
 
 export interface VolumeSearchResponse {
@@ -15,6 +16,7 @@ export interface VolumeSearchQuery {
   title?: string;
   author?: string;
   publisher?: string;
+  isbn?: Array<string>;
 }
 
 export interface VolumeInfo {
