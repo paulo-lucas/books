@@ -34,15 +34,15 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const toggleOrderBy = () =>
     setOrderBy(orderBy === 'newest' ? 'relevance' : 'newest');
 
-  const isFavorite = (isbn: string) => favorites.includes(isbn);
+  const isFavorite = (identifier: string) => favorites.includes(identifier);
 
-  const toggleFavorite = (isbn: string) => {
+  const toggleFavorite = (identifier: string) => {
     let updatedFavorites;
 
-    if (favorites.includes(isbn)) {
-      updatedFavorites = favorites.filter(fav => fav !== isbn);
+    if (favorites.includes(identifier)) {
+      updatedFavorites = favorites.filter(fav => fav !== identifier);
     } else {
-      updatedFavorites = [...favorites, isbn];
+      updatedFavorites = [...favorites, identifier];
     }
 
     setFavorites(updatedFavorites);

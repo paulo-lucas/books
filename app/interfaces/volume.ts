@@ -21,7 +21,7 @@ export interface VolumeSearchQuery {
 
 export interface VolumeInfo {
   title: string;
-  authors: Array<String>;
+  authors: Array<string>;
   publisher: string;
   publishedDate: string;
   description: string;
@@ -33,6 +33,12 @@ export interface VolumeInfo {
   previewLink: string;
   infoLink: string;
   canonicalVolumeLink: string;
+  industryIdentifiers?: Array<IdentifierInfo>;
+}
+
+export interface IdentifierInfo {
+  type: string;
+  identifier: string;
 }
 
 export interface SaleInfo {
