@@ -25,9 +25,9 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({
       <Icon
         name="favorite"
         type="fontisto"
-        color={checked() ? colors.secondary : colors.grey3}
+        color={checked() ? colors.success : colors.grey3}
         onPress={onCheck}
-        size={32}
+        size={48}
       />
     </View>
   );
