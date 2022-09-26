@@ -1,7 +1,8 @@
 import React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 import { Volume } from '@app/interfaces/volume';
 import Book from './Book';
+import BookSkeleton from './BookSkeleton';
 import Empty from './Empty';
 import { useBooks } from '@app/hooks';
 
@@ -14,7 +15,7 @@ interface RenderItemArgs {
 }
 
 export const Bookshelf: React.FC<BookshelfProps> = () => {
-  const { books } = useBooks();
+  const { books, refreshing, refreshBooks } = useBooks();
 
   const renderItem = ({ item }: RenderItemArgs) => {
     const identifier =
@@ -34,13 +35,28 @@ export const Bookshelf: React.FC<BookshelfProps> = () => {
     );
   };
 
+  const renderSkeletonItem = () => {
+    return <BookSkeleton />;
+  };
+
   return (
     <FlatList
-      data={books.data}
-      renderItem={renderItem}
-      keyExtractor={item => item.id}
+      refreshing={refreshing}
+      data={
+        refreshing ? ([{}, {}, {}, {}, {}, {}] as Array<Volume>) : books.data
+      }
+      renderItem={refreshing ? renderSkeletonItem : renderItem}
+      keyExtractor={(_, id) => String(id)}
       ListEmptyComponent={Empty}
       numColumns={2}
+      onRefresh={refreshBooks}
+      style={styles.list}
     />
   );
 };
+
+const styles = StyleSheet.create({
+  list: {
+    marginBottom: 100,
+  },
+});

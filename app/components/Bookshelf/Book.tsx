@@ -1,12 +1,6 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ActivityIndicator,
-  StyleSheet,
-} from 'react-native';
-import { Image, useTheme } from '@rneui/themed';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Image, useTheme, Skeleton } from '@rneui/themed';
 import FavoriteButton from './FavoriteButton';
 
 interface BookProps {
@@ -37,10 +31,10 @@ const Book: React.FC<BookProps> = ({
         <View style={styles.shadow}>
           <Image
             source={{
-              uri: thumbnail,
+              uri: thumbnail ?? 'https://www.xy.com/images/placeholder.jpg',
             }}
             containerStyle={styles.image}
-            PlaceholderContent={<ActivityIndicator />}
+            PlaceholderContent={<Skeleton width={300} height={500} />}
           />
         </View>
         <Text numberOfLines={2} style={styles.title}>
@@ -74,7 +68,7 @@ const createStyles = ({ colors }: any) =>
       justifyContent: 'center',
     },
     image: {
-      width: '90%',
+      width: '100%',
       height: undefined,
       aspectRatio: 76 / 130,
       borderRadius: 5,
