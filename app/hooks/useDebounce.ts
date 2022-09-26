@@ -8,8 +8,7 @@ export const useDebounce = (fn: Function, delay: number) => {
       clearTimeout(timeoutRef.current);
     }
 
-    timeoutRef.current = setTimeout(() => {}, delay);
-    fn(args);
+    timeoutRef.current = setTimeout(() => fn(...args), delay);
   }
 
   return debounceFN;
