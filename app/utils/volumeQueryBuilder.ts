@@ -26,6 +26,5 @@ export const volumeQueryBuilder = (fields: VolumeSearchQuery): string => {
 
   query = query.replace(/^(\+|&)/, '');
 
-  console.log(query);
   return query;
 };
