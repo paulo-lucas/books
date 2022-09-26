@@ -14,6 +14,7 @@ interface BookProps {
   thumbnail: string;
   authors?: Array<string>;
   publisher: string;
+  identifier: string;
 }
 
 const Book: React.FC<BookProps> = ({
@@ -21,20 +22,17 @@ const Book: React.FC<BookProps> = ({
   thumbnail,
   authors,
   publisher,
+  identifier,
 }) => {
   const { theme } = useTheme();
   const styles = createStyles(theme);
 
   const author = authors?.length ? authors[0] : publisher;
-  thumbnail = thumbnail.replace('http://', 'https://');
+  thumbnail = thumbnail?.replace('http://', 'https://');
 
   return (
     <TouchableOpacity style={styles.touchable}>
-      <FavoriteButton
-        style={styles.favorite}
-        checked={true}
-        onCheck={() => {}}
-      />
+      <FavoriteButton style={styles.favorite} identifier={identifier} />
       <View style={styles.container}>
         <View style={styles.shadow}>
           <Image

@@ -1,14 +1,17 @@
 import React from 'react';
 import { View } from 'react-native';
+import { BooksProvider } from '@app/contexts/BooksContext';
 
 import { Bookshelf, SearchBar } from '@app/components';
 
 function HomeScreen() {
   return (
-    <View>
-      <SearchBar />
-      <Bookshelf />
-    </View>
+    <BooksProvider>
+      <View>
+        <SearchBar />
+        <Bookshelf />
+      </View>
+    </BooksProvider>
   );
 }
 

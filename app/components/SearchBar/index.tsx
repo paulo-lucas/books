@@ -1,10 +1,13 @@
 import React from 'react';
 import { SearchBar as RNESearchBar, useTheme } from '@rneui/themed';
 import { StyleSheet } from 'react-native';
+import { useSearch } from '@app/hooks';
 
 export const SearchBar = () => {
   const { theme } = useTheme();
   const styles = createStyles(theme);
+
+  const { searchText, onChangeSearch, onClearSearch } = useSearch();
 
   return (
     <RNESearchBar
@@ -12,6 +15,9 @@ export const SearchBar = () => {
       inputContainerStyle={styles.inputContainer}
       inputStyle={styles.input}
       placeholder="Search books"
+      value={searchText}
+      onChangeText={onChangeSearch}
+      onClear={onClearSearch}
     />
   );
 };
