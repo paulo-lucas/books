@@ -51,11 +51,12 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
   const fetchBooks = useCallback(
     async (page: number, searchFromDebounce?: string) => {
-      if (!searchText && !searchFromDebounce) {
+      const search = searchFromDebounce ?? searchText;
+
+      if (!search) {
         return onClearSearch();
       }
 
-      const search = searchFromDebounce ?? searchText;
       const isbn = filterByFavorites ? favorites : [];
       const q = { search, isbn };
       const { itemsPerPage: maxResults } = books;
