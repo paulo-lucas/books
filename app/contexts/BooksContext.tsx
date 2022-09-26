@@ -54,7 +54,7 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
   };
 
   const fetchBooks = useCallback(async () => {
-    if (!searchTextDebounce) {
+    if (!searchTextDebounce && (!filterByFavorites || !favorites.length)) {
       return onClearSearch();
     }
 
@@ -79,10 +79,14 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
       setRefreshing(true);
       const { data } = await searchVolumes(request);
 
+      const items = filterByFavorites
+        ? data.items?.filter(item => favorites.includes(item.id))
+        : data.items;
+
       dispatch({
         type: 'update',
         total: data.totalItems,
-        data: data.items ?? [],
+        data: items ?? [],
         request: JSON.stringify(request),
       });
 

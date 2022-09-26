@@ -5,11 +5,11 @@ export const volumeQueryBuilder = (fields: VolumeSearchQuery): string => {
   let query = '';
 
   if (search) {
-    query += `+${search}`;
+    query += `+"${search}"`;
   }
 
   if (identifier?.length) {
-    query += `&${identifier.join('|')}`;
+    query += `+${identifier.map(s => `"${s}"`).join('|')}`;
   }
 
   if (author) {

@@ -18,20 +18,13 @@ export const Bookshelf: React.FC<BookshelfProps> = () => {
   const { books, fetchBooks, refreshing } = useBooks();
 
   const renderItem = ({ item }: RenderItemArgs) => {
-    const identifier =
-      item.volumeInfo.industryIdentifiers?.find(id => id.type === 'ISBN_13')
-        ?.identifier ??
-      item.volumeInfo.industryIdentifiers?.find(id => id.type.includes('ISBN'))
-        ?.identifier ??
-      item.id;
-
     return (
       <Book
         title={item.volumeInfo.title}
         publisher={item.volumeInfo.publisher}
         thumbnail={item.volumeInfo.imageLinks?.thumbnail}
         authors={item.volumeInfo.authors}
-        identifier={identifier}
+        identifier={item.id}
       />
     );
   };
