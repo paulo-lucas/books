@@ -5,7 +5,13 @@ export const usePagination = () => {
   const {
     books: { page, total, itemsPerPage },
     onChangePage,
+    refreshing,
   } = useContext(BooksContext);
 
-  return { page, onChangePage, totalPages: Math.ceil(total / itemsPerPage) };
+  return {
+    page,
+    onChangePage,
+    refreshing,
+    totalPages: Math.ceil(total / itemsPerPage),
+  };
 };
