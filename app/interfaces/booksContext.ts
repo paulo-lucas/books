@@ -5,6 +5,7 @@ export interface BooksState {
   itemsPerPage: number;
   page: number;
   data: Array<Volume>;
+  request?: string;
 }
 
 export interface BooksContextData {
@@ -17,7 +18,7 @@ export interface BooksContextData {
   toggleFavorite(isbn: string): void;
   isFavorite(favorite: string): boolean;
   onClearSearch(): void;
-  refreshBooks(...args: any): void;
+  fetchBooks(): void;
   orderBy: string;
   filterByFavorites: boolean;
 }
@@ -26,6 +27,7 @@ export interface UpdatePayload {
   type: 'update';
   page?: number;
   total: number;
+  request: string;
   data: Array<Volume>;
 }
 

@@ -21,9 +21,9 @@ export const booksInitialState: BooksState = {
  */
 
 const update: Reducer<BooksState, Action> = (state, action) => {
-  const { page, total, data } = action as UpdatePayload;
+  const { page, total, data, request } = action as UpdatePayload;
 
-  return { ...state, page: page ?? 0, total, data };
+  return { ...state, page: page ?? 0, total, request, data };
 };
 
 const clear: Reducer<BooksState, Action> = () => {

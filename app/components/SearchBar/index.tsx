@@ -18,6 +18,7 @@ export const SearchBar = () => {
       value={searchText}
       onChangeText={onChangeSearch}
       onClear={onClearSearch}
+      autoCorrect={false}
     />
   );
 };

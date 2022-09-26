@@ -8,6 +8,10 @@ export const volumeQueryBuilder = (fields: VolumeSearchQuery): string => {
     query += `+${search}`;
   }
 
+  if (identifier?.length) {
+    query += `&${identifier.join('|')}`;
+  }
+
   if (author) {
     query += `+inauthor:${author}`;
   }
@@ -20,11 +24,8 @@ export const volumeQueryBuilder = (fields: VolumeSearchQuery): string => {
     query += `+inpublisher${publisher}`;
   }
 
-  if (identifier?.length) {
-    query += `+${identifier.join('|')}`;
-  }
+  query = query.replace(/^(\+|&)/, '');
 
-  query = query.replace(/^\+/, '');
-
+  console.log(query);
   return query;
 };

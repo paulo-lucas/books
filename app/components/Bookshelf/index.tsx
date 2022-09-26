@@ -15,7 +15,7 @@ interface RenderItemArgs {
 }
 
 export const Bookshelf: React.FC<BookshelfProps> = () => {
-  const { books, refreshing, refreshBooks } = useBooks();
+  const { books, fetchBooks, refreshing } = useBooks();
 
   const renderItem = ({ item }: RenderItemArgs) => {
     const identifier =
@@ -50,7 +50,7 @@ export const Bookshelf: React.FC<BookshelfProps> = () => {
       keyExtractor={(_, id) => String(id)}
       ListEmptyComponent={Empty}
       numColumns={2}
-      onRefresh={refreshBooks}
+      onRefresh={fetchBooks}
       style={styles.list}
     />
   );

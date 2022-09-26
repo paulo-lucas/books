@@ -11,19 +11,14 @@ import { useDebounce } from '@app/hooks';
 import { searchVolumes, storeFavorites, getFavorites } from '@app/services';
 import { Alert } from 'react-native';
 import { useCallback } from 'react';
-
-interface FetchBooksArgs {
-  page: number;
-  searchOverride?: string;
-  orderByOverride?: 'newest' | 'relevance';
-  filterByFavoritesOverride?: boolean;
-}
+import { VolumeSearchRequest } from '@app/interfaces/volume';
 
 export const BooksContext = createContext({} as BooksContextData);
 
 export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [books, dispatch] = useReducer(booksReducer, booksInitialState);
   const [searchText, setSearchText] = useState<string>('');
+  const [searchTextDebounce, setSearchTextDebounce] = useState<string>('');
   const [refreshing, setRefreshing] = useState<boolean>(false);
   const [orderBy, setOrderBy] = useState<'relevance' | 'newest'>('relevance');
   const [favorites, setFavorites] = useState<Array<string>>([]);
@@ -36,16 +31,10 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
   const onClearSearch = () => dispatch({ type: 'clear' });
 
-  const toggleFavoriteFilter = () => {
-    setFilterByFavorites(!filterByFavorites);
-    refreshBooks(0, orderBy, !filterByFavorites);
-  };
+  const toggleFavoriteFilter = () => setFilterByFavorites(!filterByFavorites);
 
-  const toggleOrderBy = () => {
-    const toggledOrderBy = orderBy === 'newest' ? 'relevance' : 'newest';
-    setOrderBy(toggledOrderBy);
-    refreshBooks(0, toggledOrderBy);
-  };
+  const toggleOrderBy = () =>
+    setOrderBy(orderBy === 'newest' ? 'relevance' : 'newest');
 
   const isFavorite = (identifier: string) => favorites.includes(identifier);
 
@@ -64,62 +53,55 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
     storeFavorites(updatedFavorites);
   };
 
-  const fetchBooks = useCallback(
-    async ({
-      page,
-      searchOverride,
-      filterByFavoritesOverride,
-      orderByOverride,
-    }: FetchBooksArgs) => {
-      const search = searchOverride ?? searchText;
+  const fetchBooks = useCallback(async () => {
+    if (!searchTextDebounce) {
+      return onClearSearch();
+    }
 
-      if (!search) {
-        return onClearSearch();
+    const identifier = filterByFavorites ? favorites : [];
+    const q = { search: searchTextDebounce, identifier };
+    const { itemsPerPage: maxResults, page } = books;
+    const startIndex = page * maxResults;
+
+    try {
+      const request: VolumeSearchRequest = {
+        q,
+        startIndex,
+        maxResults,
+        filter: 'partial',
+        orderBy,
+      };
+
+      if (JSON.stringify(request) === books.request) {
+        return;
       }
 
-      const identifier =
-        filterByFavoritesOverride ?? filterByFavorites ? favorites : [];
-      const q = { search, identifier };
-      const { itemsPerPage: maxResults } = books;
-      const startIndex = page * maxResults;
+      setRefreshing(true);
+      const { data } = await searchVolumes(request);
 
-      try {
-        setRefreshing(true);
-        const { data } = await searchVolumes({
-          q,
-          startIndex,
-          maxResults,
-          orderBy: orderByOverride ?? orderBy,
-        });
+      dispatch({
+        type: 'update',
+        total: data.totalItems,
+        data: data.items ?? [],
+        request: JSON.stringify(request),
+      });
 
-        dispatch({
-          type: 'update',
-          total: data.totalItems,
-          data: data.items ?? [],
-        });
+      setRefreshing(false);
+    } catch (err) {
+      Alert.alert('Could not retrieve books.');
+    }
+  }, [books, favorites, filterByFavorites, orderBy, searchTextDebounce]);
 
-        setRefreshing(false);
-      } catch (err) {
-        Alert.alert('Could not retrieve books.');
-      }
-    },
-    [books, favorites, filterByFavorites, orderBy, searchText],
-  );
-
-  const debounceSearch = useDebounce(fetchBooks, 1000);
+  const debounceSearch = useDebounce(setSearchTextDebounce, 500);
 
   const onChangeSearch = (text: string) => {
     setSearchText(text);
-    debounceSearch({ page: 0, searchFromDebounce: text });
+    debounceSearch(text);
   };
 
-  const refreshBooks = (
-    page: number = 0,
-    orderByOverride?: 'relevance' | 'newest',
-    filterByFavoritesOverride?: boolean,
-  ) => {
-    fetchBooks({ page, filterByFavoritesOverride, orderByOverride });
-  };
+  useEffect(() => {
+    fetchBooks();
+  }, [fetchBooks]);
 
   useEffect(() => {
     fetchFavorites();
@@ -127,11 +109,11 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
   const contextData: BooksContextData = {
     books,
-    refreshBooks,
     refreshing,
     searchText,
     onChangeSearch,
     onClearSearch,
+    fetchBooks,
     toggleOrderBy,
     toggleFavoriteFilter,
     orderBy,
