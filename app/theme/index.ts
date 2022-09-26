@@ -2,11 +2,13 @@ import { createTheme } from '@rneui/themed';
 
 const theme = createTheme({
   lightColors: {
-    primary: '#671CDE',
+    primary: '#00DAC4',
+    secondary: '#CA70EA',
     surface: '#F8F8F8',
   },
   darkColors: {
-    primary: '#671CDE',
+    primary: '#00DAC4',
+    secondary: '#CA70EA',
     background: '#373747',
     black: '#CDCDCD',
     surface: '#252837',

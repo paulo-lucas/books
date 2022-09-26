@@ -6,7 +6,7 @@ import {
   ActivityIndicator,
   StyleSheet,
 } from 'react-native';
-import { Image } from '@rneui/themed';
+import { Image, useTheme } from '@rneui/themed';
 import FavoriteButton from './FavoriteButton';
 
 interface BookProps {
@@ -22,6 +22,9 @@ const Book: React.FC<BookProps> = ({
   authors,
   publisher,
 }) => {
+  const { theme } = useTheme();
+  const styles = createStyles(theme);
+
   const author = authors?.length ? authors[0] : publisher;
   thumbnail = thumbnail.replace('http://', 'https://');
 
@@ -53,49 +56,51 @@ const Book: React.FC<BookProps> = ({
   );
 };
 
-const styles = StyleSheet.create({
-  touchable: {
-    width: '50%',
-    position: 'relative',
-  },
-  favorite: {
-    position: 'absolute',
-    right: 30,
-    zIndex: 1,
-  },
-  container: {
-    width: '100%',
-    paddingHorizontal: 10,
-    paddingBottom: 20,
-    paddingTop: 5,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  image: {
-    width: '90%',
-    height: undefined,
-    aspectRatio: 76 / 130,
-    borderRadius: 5,
-    elevation: 20,
-  },
-  shadow: {
-    shadowColor: '#171717',
-    shadowOffset: { width: -2, height: 4 },
-    shadowOpacity: 0.5,
-    shadowRadius: 3,
-  },
-  title: {
-    fontSize: 15,
-    fontWeight: '500',
-    paddingLeft: 5,
-    textAlign: 'center',
-    marginTop: 10,
-  },
-  author: {
-    fontSize: 13,
-    paddingLeft: 5,
-    textAlign: 'center',
-  },
-});
+const createStyles = ({ colors }: any) =>
+  StyleSheet.create({
+    touchable: {
+      width: '50%',
+      position: 'relative',
+    },
+    favorite: {
+      position: 'absolute',
+      right: 30,
+      zIndex: 1,
+    },
+    container: {
+      width: '100%',
+      paddingHorizontal: 10,
+      paddingBottom: 20,
+      paddingTop: 5,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    image: {
+      width: '90%',
+      height: undefined,
+      aspectRatio: 76 / 130,
+      borderRadius: 5,
+      elevation: 20,
+    },
+    shadow: {
+      shadowOffset: { width: -2, height: 4 },
+      shadowOpacity: 0.5,
+      shadowRadius: 3,
+    },
+    title: {
+      fontSize: 15,
+      fontWeight: '500',
+      paddingLeft: 5,
+      textAlign: 'center',
+      marginTop: 10,
+      color: colors.black,
+    },
+    author: {
+      fontSize: 13,
+      paddingLeft: 5,
+      textAlign: 'center',
+      color: colors.black,
+    },
+  });
 
 export default Book;
