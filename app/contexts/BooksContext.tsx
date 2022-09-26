@@ -45,8 +45,9 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
         q,
         startIndex,
         maxResults,
-        filter: 'partial',
         orderBy,
+        filter: 'partial',
+        printType: 'books',
       };
 
       if (JSON.stringify(request) === books.request) {

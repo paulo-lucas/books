@@ -2,8 +2,9 @@ export interface VolumeSearchRequest {
   q: VolumeSearchQuery;
   startIndex: number;
   maxResults: number;
-  filter: string;
   orderBy: 'newest' | 'relevance';
+  filter: string;
+  printType: 'books';
 }
 
 export interface VolumeSearchResponse {
