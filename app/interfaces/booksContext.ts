@@ -21,6 +21,7 @@ export interface BooksContextData {
   fetchBooks(): void;
   orderBy: string;
   filterByFavorites: boolean;
+  onChangePage(page: number): void;
 }
 
 export interface UpdatePayload {
@@ -33,4 +34,9 @@ export interface UpdatePayload {
 
 export interface ClearPayload {
   type: 'clear';
+}
+
+export interface MoveToPagePayload {
+  type: 'moveToPage';
+  page: number;
 }

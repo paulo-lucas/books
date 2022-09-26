@@ -106,6 +106,8 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
     debounceSearch(text);
   };
 
+  const onChangePage = (page: number) => dispatch({ type: 'moveToPage', page });
+
   useEffect(() => {
     fetchBooks();
   }, [fetchBooks]);
@@ -127,6 +129,7 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
     filterByFavorites,
     isFavorite,
     toggleFavorite,
+    onChangePage,
   };
 
   return (
