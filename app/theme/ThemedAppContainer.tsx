@@ -6,22 +6,20 @@ import { useTheme } from '@rneui/themed';
 
 const ThemedAppContainer: React.FC<PropsWithChildren> = ({ children }) => {
   const { theme } = useTheme();
-  const { background } = theme.colors;
+  const styles = createStyles(theme);
 
   return (
     <NavigationContainer theme={theme as any}>
-      <SafeAreaView style={styles(background).container}>
-        {children}
-      </SafeAreaView>
+      <SafeAreaView style={styles.container}>{children}</SafeAreaView>
     </NavigationContainer>
   );
 };
 
-const styles = (bg: string) =>
+const createStyles = (theme: any) =>
   StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: bg,
+      backgroundColor: theme.background,
     },
   });
 
