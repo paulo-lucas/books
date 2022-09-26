@@ -25,34 +25,11 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [filterByFavorites, setFilterByFavorites] = useState<boolean>(false);
 
   const fetchFavorites = useCallback(async () => {
-    const storageFavorites = await getFavorites();
-    setFavorites(storageFavorites);
+    const favoritesFromStorage = await getFavorites();
+    setFavorites(favoritesFromStorage);
   }, []);
 
-  const onClearSearch = () => dispatch({ type: 'clear' });
-
-  const toggleFavoriteFilter = () => setFilterByFavorites(!filterByFavorites);
-
-  const toggleOrderBy = () =>
-    setOrderBy(orderBy === 'newest' ? 'relevance' : 'newest');
-
-  const isFavorite = (identifier: string) => favorites.includes(identifier);
-
-  const toggleFavorite = (identifier: string) => {
-    let updatedFavorites;
-
-    if (favorites.includes(identifier)) {
-      updatedFavorites = favorites.filter(fav => fav !== identifier);
-    } else {
-      updatedFavorites = [...favorites, identifier];
-    }
-
-    updatedFavorites = updatedFavorites.filter(fav => !!fav);
-
-    setFavorites(updatedFavorites);
-    storeFavorites(updatedFavorites);
-  };
-
+  // Handle every request to list books, based on states
   const fetchBooks = useCallback(async () => {
     if (!searchTextDebounce && (!filterByFavorites || !favorites.length)) {
       return onClearSearch();
@@ -95,6 +72,32 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
       Alert.alert('Could not retrieve books.');
     }
   }, [books, favorites, filterByFavorites, orderBy, searchTextDebounce]);
+
+  const onClearSearch = () => dispatch({ type: 'clear' });
+
+  const toggleOrderBy = () =>
+    setOrderBy(orderBy === 'newest' ? 'relevance' : 'newest');
+
+  // Toggle the filter, will make table show only favorited books
+  const toggleFavoriteFilter = () => setFilterByFavorites(!filterByFavorites);
+
+  // Toggle single book favorited / not favorited
+  const toggleFavorite = (identifier: string) => {
+    let updatedFavorites;
+
+    if (favorites.includes(identifier)) {
+      updatedFavorites = favorites.filter(fav => fav !== identifier);
+    } else {
+      updatedFavorites = [...favorites, identifier];
+    }
+
+    updatedFavorites = updatedFavorites.filter(fav => !!fav);
+
+    setFavorites(updatedFavorites);
+    storeFavorites(updatedFavorites);
+  };
+
+  const isFavorite = (identifier: string) => favorites.includes(identifier);
 
   const debounceSearch = useDebounce(setSearchTextDebounce, 500);
 
