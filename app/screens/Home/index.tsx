@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { BooksProvider } from '@app/contexts/BooksContext';
 
-import { Bookshelf, SearchBar } from '@app/components';
+import { Bookshelf, SearchBar, Filters } from '@app/components';
 
 function HomeScreen() {
   return (
@@ -11,6 +11,7 @@ function HomeScreen() {
         <SearchBar />
         <Bookshelf />
       </View>
+      <Filters />
     </BooksProvider>
   );
 }
