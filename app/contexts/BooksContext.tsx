@@ -3,6 +3,7 @@ import React, {
   useState,
   useReducer,
   PropsWithChildren,
+  useEffect,
 } from 'react';
 import { BooksContextData } from '@app/interfaces/booksContext';
 import { booksReducer, booksInitialState } from '@app/states/BooksReducer';
@@ -20,6 +21,11 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [orderBy, setOrderBy] = useState<'relevance' | 'newest'>('relevance');
   const [favorites, setFavorites] = useState<Array<string>>([]);
   const [filterByFavorites, setFilterByFavorites] = useState<boolean>(false);
+
+  const fetchFavorites = useCallback(async () => {
+    const storageFavorites = await getFavorites();
+    setFavorites(storageFavorites);
+  }, []);
 
   const onClearSearch = () => dispatch({ type: 'clear' });
 
@@ -88,6 +94,10 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const refreshBooks = (page: number = 0) => {
     fetchBooks(page);
   };
+
+  useEffect(() => {
+    fetchFavorites();
+  }, [fetchFavorites]);
 
   const contextData: BooksContextData = {
     books,
