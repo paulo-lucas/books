@@ -1,1 +1,2 @@
-export * from './volume';
+export * from './volumes';
+export * from './favorites';
