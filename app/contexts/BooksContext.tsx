@@ -109,6 +109,8 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
     onClearSearch,
     toggleOrderBy,
     toggleFavoriteFilter,
+    orderBy,
+    filterByFavorites,
     isFavorite,
     toggleFavorite,
   };

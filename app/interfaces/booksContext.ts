@@ -18,6 +18,8 @@ export interface BooksContextData {
   isFavorite(favorite: string): boolean;
   onClearSearch(): void;
   refreshBooks(page?: number): void;
+  orderBy: string;
+  filterByFavorites: boolean;
 }
 
 export interface UpdatePayload {
