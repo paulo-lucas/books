@@ -2,6 +2,7 @@ import React from 'react';
 import { FlatList } from 'react-native';
 import { Volume } from '@app/interfaces/volume';
 import Book from './Book';
+import Empty from './Empty';
 
 interface BookshelfProps {
   volumes?: Array<Volume>;
@@ -28,6 +29,7 @@ export const Bookshelf: React.FC<BookshelfProps> = () => {
       data={fakeVolumes}
       renderItem={renderItem}
       keyExtractor={item => item.id}
+      ListEmptyComponent={Empty}
       numColumns={2}
     />
   );
