@@ -16,7 +16,7 @@ export interface VolumeSearchQuery {
   title?: string;
   author?: string;
   publisher?: string;
-  isbn?: Array<string>;
+  identifier?: Array<string>;
 }
 
 export interface VolumeInfo {

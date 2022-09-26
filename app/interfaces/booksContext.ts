@@ -17,7 +17,7 @@ export interface BooksContextData {
   toggleFavorite(isbn: string): void;
   isFavorite(favorite: string): boolean;
   onClearSearch(): void;
-  refreshBooks(page?: number): void;
+  refreshBooks(...args: any): void;
   orderBy: string;
   filterByFavorites: boolean;
 }

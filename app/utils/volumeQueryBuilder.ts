@@ -1,7 +1,7 @@
 import { VolumeSearchQuery } from '@app/interfaces/volume';
 
 export const volumeQueryBuilder = (fields: VolumeSearchQuery): string => {
-  const { search, author, title, publisher, isbn } = fields;
+  const { search, author, title, publisher, identifier } = fields;
   let query = '';
 
   if (search) {
@@ -20,8 +20,8 @@ export const volumeQueryBuilder = (fields: VolumeSearchQuery): string => {
     query += `+inpublisher${publisher}`;
   }
 
-  if (isbn?.length) {
-    query += `+${isbn.join('|')}`;
+  if (identifier?.length) {
+    query += `+${identifier.join('|')}`;
   }
 
   query = query.replace(/^\+/, '');
