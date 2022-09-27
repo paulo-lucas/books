@@ -7,7 +7,7 @@ import type { RootStackParamList } from '@app/router/rootStackParams';
 
 interface BookProps {
   title: string;
-  thumbnail: string;
+  thumbnail?: string;
   authors?: Array<string>;
   publisher: string;
   identifier: string;

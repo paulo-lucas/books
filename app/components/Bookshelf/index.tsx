@@ -22,7 +22,7 @@ export const Bookshelf: React.FC<BookshelfProps> = () => {
       <Book
         title={item.volumeInfo.title}
         publisher={item.volumeInfo.publisher}
-        thumbnail={item.volumeInfo.imageLinks?.thumbnail}
+        thumbnail={item.volumeInfo.imageLinks.thumbnail}
         authors={item.volumeInfo.authors}
         identifier={item.id}
       />
