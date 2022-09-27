@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Image, useTheme, Skeleton } from '@rneui/themed';
 import FavoriteButton from './FavoriteButton';
+import { useNavigation, NavigationProp } from '@react-navigation/native';
+import type { RootStackParamList } from '@app/router/rootStackParams';
 
 interface BookProps {
   title: string;
@@ -18,20 +20,23 @@ const Book: React.FC<BookProps> = ({
   publisher,
   identifier,
 }) => {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const { theme } = useTheme();
   const styles = createStyles(theme);
 
   const author = authors?.length ? authors[0] : publisher;
-  thumbnail = thumbnail?.replace('http://', 'https://');
+  const image = thumbnail?.replace('http://', 'https://');
+
+  const goToDetails = () => navigation.navigate('Details', { id: identifier });
 
   return (
-    <TouchableOpacity style={styles.touchable}>
+    <TouchableOpacity style={styles.touchable} onPress={goToDetails}>
       <FavoriteButton style={styles.favorite} identifier={identifier} />
       <View style={styles.container}>
         <View style={styles.shadow}>
           <Image
             source={{
-              uri: thumbnail ?? 'https://www.xy.com/images/placeholder.jpg',
+              uri: image ?? 'https://www.xy.com/images/placeholder.jpg',
             }}
             containerStyle={styles.image}
             PlaceholderContent={<Skeleton width={300} height={500} />}
