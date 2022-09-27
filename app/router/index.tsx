@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTheme } from '@rneui/themed';
 import { ToggleTheme } from '@app/components';
 import type { RootStackParamList } from './rootStackParams';
+import { BooksProvider } from '@app/contexts/BooksContext';
 
 import Home from '@app/screens/Home';
 import Details from '@app/screens/Details';
@@ -15,23 +16,25 @@ function Router() {
   } = useTheme();
 
   return (
-    <Stack.Navigator
-      screenOptions={{
-        title: 'Books',
-        headerTitleAlign: 'left', //moved this from headerStyle property
-        headerStyle: {
-          backgroundColor: colors.background,
-        },
-        headerTintColor: colors.primary,
-        headerTitleStyle: {
-          fontWeight: 'bold',
-          fontSize: 22,
-        },
-        headerRight: ToggleTheme,
-      }}>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Details" component={Details} />
-    </Stack.Navigator>
+    <BooksProvider>
+      <Stack.Navigator
+        screenOptions={{
+          title: 'Books',
+          headerTitleAlign: 'left', //moved this from headerStyle property
+          headerStyle: {
+            backgroundColor: colors.background,
+          },
+          headerTintColor: colors.primary,
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 22,
+          },
+          headerRight: ToggleTheme,
+        }}>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Details" component={Details} />
+      </Stack.Navigator>
+    </BooksProvider>
   );
 }
 
