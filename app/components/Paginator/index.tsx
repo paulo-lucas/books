@@ -30,7 +30,12 @@ export const Paginator = () => {
         Prev
       </Button>
 
-      <Text style={styles.text}>Page {page + 1}</Text>
+      <View style={styles.textWrapper}>
+        <Text style={styles.text}>Page {page + 1}</Text>
+        <Text style={styles.text}>
+          {page * itemsPerPage + 1}-{(page + 1) * itemsPerPage}
+        </Text>
+      </View>
 
       <Button
         type="clear"
@@ -50,6 +55,9 @@ const createStyles = ({ colors }: any) =>
       justifyContent: 'space-evenly',
       alignItems: 'center',
       paddingBottom: 20,
+    },
+    textWrapper: {
+      alignItems: 'center',
     },
     text: {
       color: colors.black,
