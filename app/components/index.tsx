@@ -6,3 +6,4 @@ export * from './Paginator';
 export * from './BackButton';
 export * from './BookInfo';
 export * from './FavoriteFAB';
+export * from './Book';
