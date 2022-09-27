@@ -1,12 +1,12 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import { Bookshelf, SearchBar, Filters, Paginator } from '@app/components';
 
 function HomeScreen() {
   return (
     <>
-      <View>
+      <View style={styles.container}>
         <SearchBar />
         <Paginator />
         <Bookshelf />
@@ -15,5 +15,9 @@ function HomeScreen() {
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+});
 
 export default HomeScreen;

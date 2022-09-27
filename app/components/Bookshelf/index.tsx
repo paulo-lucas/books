@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, StyleSheet } from 'react-native';
+import { FlatList } from 'react-native';
 import { Volume } from '@app/interfaces/volume';
 import Book from './Book';
 import BookSkeleton from './BookSkeleton';
@@ -44,13 +44,6 @@ export const Bookshelf: React.FC<BookshelfProps> = () => {
       ListEmptyComponent={Empty}
       numColumns={2}
       onRefresh={fetchBooks}
-      style={styles.list}
     />
   );
 };
-
-const styles = StyleSheet.create({
-  list: {
-    marginBottom: 100,
-  },
-});
