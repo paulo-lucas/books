@@ -1,11 +1,12 @@
 import React from 'react';
 import { BookDetailsProvider } from '@app/contexts/BookDetailsContext';
-import { BookInfo } from '@app/components';
+import { BookInfo, FavoriteFAB } from '@app/components';
 
 function HomeScreen() {
   return (
     <BookDetailsProvider>
       <BookInfo />
+      <FavoriteFAB />
     </BookDetailsProvider>
   );
 }
