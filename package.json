@@ -26,6 +26,8 @@
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
+    "@testing-library/jest-native": "^4.0.13",
+    "@testing-library/react-native": "^11.2.0",
     "@tsconfig/react-native": "^2.0.2",
     "@types/jest": "^26.0.23",
     "@types/react-native": "^0.70.0",
@@ -42,6 +44,16 @@
   },
   "jest": {
     "preset": "react-native",
+    "transformIgnorePatterns": [
+      "node_modules/?!(react-native-root-siblings)"
+    ],
+    "setupFiles": [
+      "./tests/jest-setup.ts"
+    ],
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-native/extend-expect"
+    ],
+    "snapshotResolver": "./tests/snapshotResolver.js",
     "moduleFileExtensions": [
       "ts",
       "tsx",
