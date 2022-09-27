@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Skeleton } from '@rneui/themed';
 
-const Book = () => {
+const BookSkeleton = () => {
   return (
     <View style={styles.container}>
       <Skeleton style={[styles.shadow, styles.image]} />
@@ -52,4 +52,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default React.memo(Book);
+export default BookSkeleton;
