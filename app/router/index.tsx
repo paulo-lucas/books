@@ -2,10 +2,12 @@ import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTheme } from '@rneui/themed';
 import { ToggleTheme } from '@app/components';
+import type { RootStackParamList } from './rootStackParams';
 
 import Home from '@app/screens/Home';
+import Details from '@app/screens/Details';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function Router() {
   const {
@@ -28,6 +30,7 @@ function Router() {
         headerRight: ToggleTheme,
       }}>
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Details" component={Details} />
     </Stack.Navigator>
   );
 }
