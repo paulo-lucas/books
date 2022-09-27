@@ -12,6 +12,7 @@ export const usePagination = () => {
     page,
     onChangePage,
     refreshing,
-    totalPages: Math.ceil(total / itemsPerPage),
+    total,
+    itemsPerPage,
   };
 };

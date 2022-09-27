@@ -7,15 +7,16 @@ export const Paginator = () => {
   const { theme } = useTheme();
   const styles = createStyles(theme);
 
-  const { page, onChangePage, totalPages, refreshing } = usePagination();
+  const { page, onChangePage, total, itemsPerPage, refreshing } =
+    usePagination();
 
   const disabledPrev = refreshing || page === 0;
-  const disabledNext = refreshing || page + 1 >= totalPages;
+  const disabledNext = refreshing || total < itemsPerPage;
 
   const iconColor = (disabled: boolean) =>
-    disabled ? theme.colors.grey2 : theme.colors.primary;
+    disabled ? theme.colors.grey3 : theme.colors.primary;
 
-  if (totalPages === 0) {
+  if (total === 0) {
     return <></>;
   }
 
@@ -29,9 +30,7 @@ export const Paginator = () => {
         Prev
       </Button>
 
-      <Text style={styles.text}>
-        Page {page + 1} of {totalPages}
-      </Text>
+      <Text style={styles.text}>Page {page + 1}</Text>
 
       <Button
         type="clear"

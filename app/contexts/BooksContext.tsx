@@ -63,13 +63,16 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
       dispatch({
         type: 'update',
-        total: data.totalItems,
+        total: data.items?.length ?? 0,
         data: items ?? [],
+        page: page,
         request: JSON.stringify(request),
       });
 
       setRefreshing(false);
     } catch (err) {
+      onClearSearch();
+      setFilterByFavorites(false);
       Alert.alert('Could not retrieve books.');
     }
   }, [books, favorites, filterByFavorites, orderBy, searchTextDebounce]);
