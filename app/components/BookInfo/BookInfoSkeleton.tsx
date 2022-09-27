@@ -21,7 +21,7 @@ const BookInfoSkeleton = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 40,
+    paddingHorizontal: 20,
     paddingVertical: 20,
   },
   image: {
