@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTheme } from '@rneui/themed';
-import { ToggleTheme } from '@app/components';
+import { BackButton, ToggleTheme } from '@app/components';
 import type { RootStackParamList } from './rootStackParams';
 import { BooksProvider } from '@app/contexts/BooksContext';
 
@@ -32,7 +32,13 @@ function Router() {
           headerRight: ToggleTheme,
         }}>
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen
+          name="Details"
+          component={Details}
+          options={{
+            headerLeft: BackButton,
+          }}
+        />
       </Stack.Navigator>
     </BooksProvider>
   );
