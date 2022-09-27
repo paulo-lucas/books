@@ -95,4 +95,4 @@ const createStyles = ({ colors }: any) =>
     },
   });
 
-export default Book;
+export default React.memo(Book);

@@ -52,4 +52,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Book;
+export default React.memo(Book);

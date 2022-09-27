@@ -33,4 +33,4 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({
   );
 };
 
-export default FavoriteButton;
+export default React.memo(FavoriteButton);
