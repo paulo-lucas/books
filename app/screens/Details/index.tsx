@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text } from 'react-native';
 import { BookDetailsProvider } from '@app/contexts/BookDetailsContext';
+import { BookInfo } from '@app/components';
 
 function HomeScreen() {
   return (
     <BookDetailsProvider>
-      <Text>askmsadlknadsklad</Text>
+      <BookInfo />
     </BookDetailsProvider>
   );
 }
