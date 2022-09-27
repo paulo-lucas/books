@@ -6,7 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-import { Image, Skeleton } from '@rneui/themed';
+import { Image, Skeleton, useTheme } from '@rneui/themed';
 import { useBookDetails } from '@app/hooks';
 import { getBestFromImageLinks } from '@app/utils/getBestImageFromImagelinks';
 import BookInfoSkeleton from './BookInfoSkeleton';
@@ -14,6 +14,8 @@ import { VolumeInfo } from '@app/interfaces/volume';
 
 export const BookInfo = () => {
   const { book, loading } = useBookDetails();
+  const { theme } = useTheme();
+  const styles = createStyles(theme);
   const [descriptionOpen, setDescriptionoOpen] = useState<boolean>(false);
 
   const toggleDescription = () => setDescriptionoOpen(!descriptionOpen);
@@ -72,46 +74,52 @@ export const BookInfo = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingVertical: 20,
-  },
-  scrollview: {
-    paddingHorizontal: 20,
-  },
-  imageWrapper: {
-    width: '100%',
-    alignItems: 'center',
-  },
-  image: {
-    width: '80%',
-    height: undefined,
-    aspectRatio: 76 / 130,
-  },
-  placeholder: {
-    width: '100%',
-    height: '100%',
-  },
-  title: {
-    fontWeight: '600',
-    marginTop: 20,
-    fontSize: 24,
-  },
-  aditionalInfo: {
-    fontSize: 14,
-  },
-  subtitle: {
-    fontWeight: '500',
-    marginTop: 20,
-    fontSize: 18,
-  },
-  description: {
-    fontSize: 16,
-  },
-  toggleDescription: {
-    fontSize: 16,
-    fontWeight: '500',
-    textDecorationLine: 'underline',
-  },
-});
+const createStyles = ({ colors }: any) =>
+  StyleSheet.create({
+    container: {
+      flex: 1,
+      paddingVertical: 20,
+    },
+    scrollview: {
+      paddingHorizontal: 20,
+    },
+    imageWrapper: {
+      width: '100%',
+      alignItems: 'center',
+    },
+    image: {
+      width: '80%',
+      height: undefined,
+      aspectRatio: 76 / 130,
+    },
+    placeholder: {
+      width: '100%',
+      height: '100%',
+    },
+    title: {
+      fontWeight: '600',
+      marginTop: 20,
+      fontSize: 24,
+      color: colors.black,
+    },
+    aditionalInfo: {
+      fontSize: 14,
+      color: colors.black,
+    },
+    subtitle: {
+      fontWeight: '500',
+      marginTop: 20,
+      fontSize: 18,
+      color: colors.black,
+    },
+    description: {
+      fontSize: 16,
+      color: colors.black,
+    },
+    toggleDescription: {
+      fontSize: 16,
+      color: colors.black,
+      fontWeight: '500',
+      textDecorationLine: 'underline',
+    },
+  });
