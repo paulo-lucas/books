@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { key } from './constants/api.key';
+import { key } from '../../api_key';
 
 const instance = axios.create({
   baseURL: 'https://www.googleapis.com/books/v1',
