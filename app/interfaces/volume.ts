@@ -30,7 +30,13 @@ export interface VolumeInfo {
   pageCount: number;
   categories: Array<string>;
   maturityRating: string;
-  imageLinks: { smallThumbnail: string; thumbnail: string };
+  imageLinks: {
+    smallThumbnail?: string;
+    thumbnail?: string;
+    large?: string;
+    medium?: string;
+    small?: string;
+  };
   language: string;
   previewLink: string;
   infoLink: string;
