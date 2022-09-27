@@ -1,7 +1,8 @@
 import type { Volume } from './volume';
 
 export interface BooksDetailsContextData {
-  book: Volume;
+  book?: Volume;
   toggleFavorite(): void;
   isFavorite(): boolean;
+  loading: boolean;
 }

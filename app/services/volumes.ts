@@ -1,6 +1,7 @@
 import {
   VolumeSearchRequest,
   VolumeSearchResponse,
+  Volume,
 } from '@app/interfaces/volume';
 import { BooksUrl } from './constants/books';
 import { volumeQueryBuilder } from '@app/utils/volumeQueryBuilder';
@@ -16,3 +17,8 @@ export const searchVolumes = async (
       q: volumeQueryBuilder(request.q),
     },
   });
+
+export const showVolume = async (
+  volumeId: string,
+): Promise<AxiosResponse<Volume>> =>
+  http.get<Volume>(`${BooksUrl.VOLUME}/${volumeId}`);
