@@ -1,8 +1,8 @@
-import mockedAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
+import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 import { createTheme } from '@rneui/themed';
 
-const mockedTheme = { colors: createTheme({}).lightColors };
-const mockedNavigate = jest.fn();
+const mockTheme = { colors: createTheme({}).lightColors };
+const mockNavigate = jest.fn();
 
 jest.mock('axios', () => {
   const actualAxios = jest.requireActual('axios');
@@ -17,7 +17,7 @@ jest.mock('@react-navigation/native', () => {
   return {
     ...actualNav,
     useNavigation: () => ({
-      navigate: mockedNavigate,
+      navigate: mockNavigate,
     }),
   };
 });
@@ -27,14 +27,16 @@ jest.mock('@rneui/themed', () => {
   return {
     ...actualRNE,
     useTheme: () => ({
-      theme: mockedTheme,
+      theme: mockTheme,
     }),
   };
 });
 
+jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
+
 jest.mock(
-  '@react-native-async-storage/async-storage',
-  () => mockedAsyncStorage,
+  'react-native-safe-area-context',
+  () => require('react-native-safe-area-context/jest/mock').default,
 );
 
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
