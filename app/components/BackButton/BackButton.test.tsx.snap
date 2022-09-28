@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`back button should render correctly: book 1`] = `
+<RNCSafeAreaView
+  edges={
+    Array [
+      "bottom",
+      "left",
+      "right",
+      "top",
+    ]
+  }
+  style={
+    Object {
+      "backgroundColor": undefined,
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "overflow": "hidden",
+      }
+    }
+    testID="RNE__ICON__CONTAINER"
+  >
+    <View
+      accessibilityRole="button"
+      android_ripple={
+        Object {
+          "borderless": false,
+          "color": "rgba(0, 0, 0, 0.3)",
+          "radius": -5,
+        }
+      }
+      disabled={false}
+      replaceTheme={[Function]}
+      style={
+        Object {
+          "marginRight": 20,
+          "padding": 10,
+        }
+      }
+      testID="RNE__ICON__CONTAINER_ACTION"
+      updateTheme={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "justifyContent": "center",
+          }
+        }
+        testID="RNE__ICON"
+      >
+        <Text
+          allowFontScaling={false}
+          selectable={false}
+          style={
+            Array [
+              Object {
+                "color": "#2089dc",
+                "fontSize": 24,
+              },
+              Object {
+                "backgroundColor": "transparent",
+              },
+              Object {
+                "fontFamily": "anticon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+          testID="RNE__ICON__Component"
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaView>
+`;
