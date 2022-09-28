@@ -64,6 +64,7 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
       dispatch({
         type: 'update',
         total: data.items?.length ?? 0,
+        distinctTotal: items.length,
         data: items ?? [],
         page: page,
         request: JSON.stringify(request),

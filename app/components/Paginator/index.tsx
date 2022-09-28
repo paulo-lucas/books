@@ -7,8 +7,11 @@ export const Paginator = () => {
   const { theme } = useTheme();
   const styles = createStyles(theme);
 
-  const { page, onChangePage, total, itemsPerPage, refreshing } =
+  const { page, onChangePage, distinctTotal, total, itemsPerPage, refreshing } =
     usePagination();
+
+  const startItem = page * itemsPerPage + 1;
+  const endItem = startItem + (distinctTotal ?? total) - 1;
 
   const disabledPrev = refreshing || page === 0;
   const disabledNext = refreshing || total < itemsPerPage;
@@ -33,7 +36,7 @@ export const Paginator = () => {
       <View style={styles.textWrapper}>
         <Text style={styles.text}>Page {page + 1}</Text>
         <Text style={styles.text}>
-          {page * itemsPerPage + 1}-{(page + 1) * itemsPerPage}
+          Items {startItem}-{endItem}
         </Text>
       </View>
 

@@ -6,6 +6,7 @@ export interface BooksState {
   page: number;
   data: Array<Volume>;
   request?: string;
+  distinctTotal?: number;
 }
 
 export interface BooksContextData {
@@ -28,6 +29,7 @@ export interface UpdatePayload {
   type: 'update';
   page?: number;
   total: number;
+  distinctTotal?: number;
   request: string;
   data: Array<Volume>;
 }

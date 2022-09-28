@@ -3,7 +3,7 @@ import { BooksContext } from '@app/contexts/BooksContext';
 
 export const usePagination = () => {
   const {
-    books: { page, total, itemsPerPage },
+    books: { page, total, distinctTotal, itemsPerPage },
     onChangePage,
     refreshing,
   } = useContext(BooksContext);
@@ -13,6 +13,7 @@ export const usePagination = () => {
     onChangePage,
     refreshing,
     total,
+    distinctTotal,
     itemsPerPage,
   };
 };
