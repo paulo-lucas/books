@@ -1,0 +1,635 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`paginator should render correctly when refreshing: paginator refreshing 1`] = `
+<RNCSafeAreaView
+  edges={
+    Array [
+      "bottom",
+      "left",
+      "right",
+      "top",
+    ]
+  }
+  style={
+    Object {
+      "backgroundColor": undefined,
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-evenly",
+        "paddingBottom": 20,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "overflow": "hidden",
+          },
+          Object {
+            "borderRadius": 2,
+          },
+          undefined,
+          false,
+        ]
+      }
+      testID="RNE_BUTTON_WRAPPER"
+    >
+      <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "busy": false,
+            "disabled": true,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "#00DAC4",
+              "borderRadius": 2,
+              "borderWidth": 0,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "padding": 8,
+              "paddingHorizontal": 10,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "overflow": "hidden",
+              }
+            }
+            testID="RNE__ICON__CONTAINER"
+          >
+            <View
+              accessibilityRole="button"
+              android_ripple={
+                Object {
+                  "borderless": false,
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "radius": -5,
+                }
+              }
+              disabled={false}
+              replaceTheme={[Function]}
+              testID="RNE__ICON__CONTAINER_ACTION"
+              updateTheme={[Function]}
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "justifyContent": "center",
+                  }
+                }
+                testID="RNE__ICON"
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    Array [
+                      Object {
+                        "color": "#86939e",
+                        "fontSize": 24,
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                      },
+                      Object {
+                        "fontFamily": "Material Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      Object {},
+                    ]
+                  }
+                  testID="RNE__ICON__Component"
+                >
+                  
+                </Text>
+              </View>
+            </View>
+          </View>
+          <Text
+            style={
+              Object {
+                "color": "hsl(208, 8%, 63%)",
+                "fontSize": 18,
+                "paddingVertical": 1,
+                "textAlign": "center",
+              }
+            }
+          >
+            Prev
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#242424",
+          }
+        }
+      >
+        Page 
+        3
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#242424",
+          }
+        }
+      >
+        Items 
+        41
+        -
+        55
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "overflow": "hidden",
+          },
+          Object {
+            "borderRadius": 2,
+          },
+          undefined,
+          false,
+        ]
+      }
+      testID="RNE_BUTTON_WRAPPER"
+    >
+      <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "busy": false,
+            "disabled": true,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "#00DAC4",
+              "borderRadius": 2,
+              "borderWidth": 0,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "padding": 8,
+              "paddingHorizontal": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "hsl(208, 8%, 63%)",
+                "fontSize": 18,
+                "paddingVertical": 1,
+                "textAlign": "center",
+              }
+            }
+          >
+            Next
+          </Text>
+          <View
+            style={
+              Object {
+                "overflow": "hidden",
+              }
+            }
+            testID="RNE__ICON__CONTAINER"
+          >
+            <View
+              accessibilityRole="button"
+              android_ripple={
+                Object {
+                  "borderless": false,
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "radius": -5,
+                }
+              }
+              disabled={false}
+              replaceTheme={[Function]}
+              testID="RNE__ICON__CONTAINER_ACTION"
+              updateTheme={[Function]}
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "justifyContent": "center",
+                  }
+                }
+                testID="RNE__ICON"
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    Array [
+                      Object {
+                        "color": "#86939e",
+                        "fontSize": 24,
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                      },
+                      Object {
+                        "fontFamily": "Material Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      Object {},
+                    ]
+                  }
+                  testID="RNE__ICON__Component"
+                >
+                  
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaView>
+`;
+
+exports[`paginator should render correctly: paginator 1`] = `
+<RNCSafeAreaView
+  edges={
+    Array [
+      "bottom",
+      "left",
+      "right",
+      "top",
+    ]
+  }
+  style={
+    Object {
+      "backgroundColor": undefined,
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-evenly",
+        "paddingBottom": 20,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "overflow": "hidden",
+          },
+          Object {
+            "borderRadius": 2,
+          },
+          undefined,
+          false,
+        ]
+      }
+      testID="RNE_BUTTON_WRAPPER"
+    >
+      <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "busy": false,
+            "disabled": false,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "#00DAC4",
+              "borderRadius": 2,
+              "borderWidth": 0,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "padding": 8,
+              "paddingHorizontal": 10,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "overflow": "hidden",
+              }
+            }
+            testID="RNE__ICON__CONTAINER"
+          >
+            <View
+              accessibilityRole="button"
+              android_ripple={
+                Object {
+                  "borderless": false,
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "radius": -5,
+                }
+              }
+              disabled={false}
+              replaceTheme={[Function]}
+              testID="RNE__ICON__CONTAINER_ACTION"
+              updateTheme={[Function]}
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "justifyContent": "center",
+                  }
+                }
+                testID="RNE__ICON"
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    Array [
+                      Object {
+                        "color": "#2089dc",
+                        "fontSize": 24,
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                      },
+                      Object {
+                        "fontFamily": "Material Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      Object {},
+                    ]
+                  }
+                  testID="RNE__ICON__Component"
+                >
+                  
+                </Text>
+              </View>
+            </View>
+          </View>
+          <Text
+            style={
+              Object {
+                "color": "#00DAC4",
+                "fontSize": 18,
+                "paddingVertical": 1,
+                "textAlign": "center",
+              }
+            }
+          >
+            Prev
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#242424",
+          }
+        }
+      >
+        Page 
+        3
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#242424",
+          }
+        }
+      >
+        Items 
+        41
+        -
+        55
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "overflow": "hidden",
+          },
+          Object {
+            "borderRadius": 2,
+          },
+          undefined,
+          false,
+        ]
+      }
+      testID="RNE_BUTTON_WRAPPER"
+    >
+      <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "busy": false,
+            "disabled": true,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "#00DAC4",
+              "borderRadius": 2,
+              "borderWidth": 0,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "padding": 8,
+              "paddingHorizontal": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "hsl(208, 8%, 63%)",
+                "fontSize": 18,
+                "paddingVertical": 1,
+                "textAlign": "center",
+              }
+            }
+          >
+            Next
+          </Text>
+          <View
+            style={
+              Object {
+                "overflow": "hidden",
+              }
+            }
+            testID="RNE__ICON__CONTAINER"
+          >
+            <View
+              accessibilityRole="button"
+              android_ripple={
+                Object {
+                  "borderless": false,
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "radius": -5,
+                }
+              }
+              disabled={false}
+              replaceTheme={[Function]}
+              testID="RNE__ICON__CONTAINER_ACTION"
+              updateTheme={[Function]}
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "justifyContent": "center",
+                  }
+                }
+                testID="RNE__ICON"
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    Array [
+                      Object {
+                        "color": "#86939e",
+                        "fontSize": 24,
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                      },
+                      Object {
+                        "fontFamily": "Material Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      Object {},
+                    ]
+                  }
+                  testID="RNE__ICON__Component"
+                >
+                  
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaView>
+`;
