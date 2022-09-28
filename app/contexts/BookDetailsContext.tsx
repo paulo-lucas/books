@@ -6,14 +6,14 @@ import React, {
   useState,
 } from 'react';
 import { RouteProp, useRoute, useNavigation } from '@react-navigation/native';
-import type { BooksDetailsContextData } from '@app/interfaces/bookDetailsContext';
+import type { BookDetailsContextData } from '@app/interfaces/bookDetailsContext';
 import type { Volume } from '@app/interfaces/volume';
 import { useFavorites } from '@app/hooks';
 import type { RootStackParamList } from '@app/router/rootStackParams';
 import { showVolume } from '@app/services';
 import { Alert } from 'react-native';
 
-export const BookDetailsContext = createContext({} as BooksDetailsContextData);
+export const BookDetailsContext = createContext({} as BookDetailsContextData);
 
 export const BookDetailsProvider: React.FC<PropsWithChildren> = ({
   children,
@@ -47,7 +47,7 @@ export const BookDetailsProvider: React.FC<PropsWithChildren> = ({
     fetchBook();
   }, [fetchBook]);
 
-  const contextData: BooksDetailsContextData = {
+  const contextData: BookDetailsContextData = {
     book,
     loading,
     isFavorite: () => isFavorite(id),
