@@ -1,0 +1,527 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`book should render correctly: book 1`] = `
+<RNCSafeAreaView
+  edges={
+    Array [
+      "bottom",
+      "left",
+      "right",
+      "top",
+    ]
+  }
+  style={
+    Object {
+      "backgroundColor": undefined,
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+        "position": "relative",
+        "width": "50%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "position": "absolute",
+          "right": 30,
+          "zIndex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "overflow": "hidden",
+          }
+        }
+        testID="RNE__ICON__CONTAINER"
+      >
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            Object {
+              "disabled": false,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          replaceTheme={[Function]}
+          testID="RNE__ICON__CONTAINER_ACTION"
+          updateTheme={[Function]}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "justifyContent": "center",
+              }
+            }
+            testID="RNE__ICON"
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                Array [
+                  Object {
+                    "color": "#52c41a",
+                    "fontSize": 48,
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "fontFamily": "Fontisto",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {},
+                ]
+              }
+              testID="RNE__ICON__Component"
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "paddingBottom": 20,
+          "paddingHorizontal": 10,
+          "paddingTop": 5,
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "shadowOffset": Object {
+              "height": 4,
+              "width": -2,
+            },
+            "shadowOpacity": 0.5,
+            "shadowRadius": 3,
+          }
+        }
+      >
+        <View
+          accessibilityIgnoresInvertColors={true}
+          style={
+            Object {
+              "aspectRatio": 0.5846153846153846,
+              "backgroundColor": "transparent",
+              "borderRadius": 5,
+              "elevation": 20,
+              "height": undefined,
+              "overflow": "hidden",
+              "position": "relative",
+              "width": "100%",
+            }
+          }
+        >
+          <Image
+            onLoad={[Function]}
+            replaceTheme={[Function]}
+            source={
+              Object {
+                "uri": "https://www.xy.com/images/placeholder.jpg",
+              }
+            }
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+            testID="RNE__Image"
+            theme={
+              Object {
+                "colors": Object {
+                  "background": "#ffffff",
+                  "black": "#242424",
+                  "disabled": "hsl(208, 8%, 90%)",
+                  "divider": "#bcbbc1",
+                  "error": "#ff190c",
+                  "grey0": "#393e42",
+                  "grey1": "#43484d",
+                  "grey2": "#5e6977",
+                  "grey3": "#86939e",
+                  "grey4": "#bdc6cf",
+                  "grey5": "#e1e8ee",
+                  "greyOutline": "#bbb",
+                  "platform": Object {
+                    "android": Object {
+                      "error": "#f44336",
+                      "grey": "rgba(0, 0, 0, 0.54)",
+                      "primary": "#2196f3",
+                      "searchBg": "#dcdce1",
+                      "secondary": "#9C27B0",
+                      "success": "#4caf50",
+                      "warning": "#ffeb3b",
+                    },
+                    "default": Object {
+                      "error": "#ff3b30",
+                      "grey": "#7d7d7d",
+                      "primary": "#007aff",
+                      "searchBg": "#dcdce1",
+                      "secondary": "#5856d6",
+                      "success": "#4cd964",
+                      "warning": "#ffcc00",
+                    },
+                    "ios": Object {
+                      "error": "#ff3b30",
+                      "grey": "#7d7d7d",
+                      "primary": "#007aff",
+                      "searchBg": "#dcdce1",
+                      "secondary": "#5856d6",
+                      "success": "#4cd964",
+                      "warning": "#ffcc00",
+                    },
+                    "web": Object {
+                      "error": "#ff190c",
+                      "grey": "#393e42",
+                      "primary": "#2089dc",
+                      "searchBg": "#303337",
+                      "secondary": "#ca71eb",
+                      "success": "#52c41a",
+                      "warning": "#faad14",
+                    },
+                  },
+                  "primary": "#00DAC4",
+                  "searchBg": "#303337",
+                  "secondary": "#2C2A55",
+                  "success": "#52c41a",
+                  "surface": "#F8F8F8",
+                  "warning": "#faad14",
+                  "white": "#ffffff",
+                },
+                "mode": "light",
+                "spacing": Object {
+                  "lg": 12,
+                  "md": 8,
+                  "sm": 4,
+                  "xl": 24,
+                  "xs": 2,
+                },
+              }
+            }
+            transitionDuration={360}
+            updateTheme={[Function]}
+          />
+          <View
+            accessibilityElementsHidden={true}
+            collapsable={false}
+            importantForAccessibility="no-hide-descendants"
+            pointerEvents="none"
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "opacity": 1,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#bdbdbd",
+                  "justifyContent": "center",
+                }
+              }
+              testID="RNE__Image__placeholder"
+            >
+              <View
+                accessibilityLabel="loading..."
+                accessibilityRole="none"
+                accessible={false}
+                onLayout={[Function]}
+                replaceTheme={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "borderRadius": 2,
+                      "overflow": "hidden",
+                    },
+                    Object {
+                      "backgroundColor": "#bdc6cf",
+                      "height": 500,
+                      "width": 300,
+                    },
+                    undefined,
+                    undefined,
+                  ]
+                }
+                testID="RNE__Skeleton"
+                updateTheme={[Function]}
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(166, 178, 190)",
+                      "height": "100%",
+                      "opacity": 1,
+                      "width": "100%",
+                    }
+                  }
+                />
+              </View>
+            </View>
+          </View>
+          <View
+            style={Object {}}
+            testID="RNE__Image__children__container"
+          />
+        </View>
+      </View>
+      <Text
+        numberOfLines={2}
+        style={
+          Object {
+            "color": "#242424",
+            "fontSize": 15,
+            "fontWeight": "500",
+            "marginTop": 10,
+            "paddingLeft": 5,
+            "textAlign": "center",
+          }
+        }
+      >
+        As crônicas de Nárnia
+      </Text>
+      <Text
+        numberOfLines={2}
+        style={
+          Object {
+            "color": "#242424",
+            "fontSize": 13,
+            "paddingLeft": 5,
+            "textAlign": "center",
+          }
+        }
+      >
+        Clive Staples Lewis
+      </Text>
+    </View>
+  </View>
+</RNCSafeAreaView>
+`;
+
+exports[`book should render skeleton correctly: book skeleton 1`] = `
+<RNCSafeAreaView
+  edges={
+    Array [
+      "bottom",
+      "left",
+      "right",
+      "top",
+    ]
+  }
+  style={
+    Object {
+      "backgroundColor": undefined,
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "justifyContent": "center",
+        "paddingBottom": 20,
+        "paddingHorizontal": 10,
+        "paddingTop": 5,
+        "width": "50%",
+      }
+    }
+  >
+    <View
+      accessibilityLabel="loading..."
+      accessibilityRole="none"
+      accessible={false}
+      onLayout={[Function]}
+      replaceTheme={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 2,
+            "overflow": "hidden",
+          },
+          Object {
+            "backgroundColor": "#bdc6cf",
+            "height": 12,
+            "width": "100%",
+          },
+          undefined,
+          Array [
+            Object {
+              "shadowOffset": Object {
+                "height": 4,
+                "width": -2,
+              },
+              "shadowOpacity": 0.5,
+              "shadowRadius": 3,
+            },
+            Object {
+              "aspectRatio": 0.5846153846153846,
+              "borderRadius": 5,
+              "elevation": 20,
+              "height": undefined,
+              "width": "100%",
+            },
+          ],
+        ]
+      }
+      testID="RNE__Skeleton"
+      updateTheme={[Function]}
+    >
+      <View
+        collapsable={false}
+        style={
+          Object {
+            "backgroundColor": "rgb(166, 178, 190)",
+            "height": "100%",
+            "opacity": 1,
+            "width": "100%",
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "marginTop": 5,
+          "width": "80%",
+        }
+      }
+    >
+      <View
+        accessibilityLabel="loading..."
+        accessibilityRole="none"
+        accessible={false}
+        onLayout={[Function]}
+        replaceTheme={[Function]}
+        style={
+          Array [
+            Object {
+              "borderRadius": 2,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#bdc6cf",
+              "height": 12,
+              "width": "100%",
+            },
+            undefined,
+            Object {
+              "height": 20,
+            },
+          ]
+        }
+        testID="RNE__Skeleton"
+        updateTheme={[Function]}
+      >
+        <View
+          collapsable={false}
+          style={
+            Object {
+              "backgroundColor": "rgb(166, 178, 190)",
+              "height": "100%",
+              "opacity": 1,
+              "width": "100%",
+            }
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "marginTop": 5,
+          "width": "70%",
+        }
+      }
+    >
+      <View
+        accessibilityLabel="loading..."
+        accessibilityRole="none"
+        accessible={false}
+        onLayout={[Function]}
+        replaceTheme={[Function]}
+        style={
+          Array [
+            Object {
+              "borderRadius": 2,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#bdc6cf",
+              "height": 12,
+              "width": "100%",
+            },
+            undefined,
+            Object {
+              "height": 15,
+            },
+          ]
+        }
+        testID="RNE__Skeleton"
+        updateTheme={[Function]}
+      >
+        <View
+          collapsable={false}
+          style={
+            Object {
+              "backgroundColor": "rgb(166, 178, 190)",
+              "height": "100%",
+              "opacity": 1,
+              "width": "100%",
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaView>
+`;
