@@ -3,9 +3,13 @@
 An app exploring Google Books api
 
 ## Instructions
+- Set up react native development environment, [docs](https://reactnative.dev/docs/environment-setup)
+
 - Run the following lines
-  ```sh
-  $ cd {project_folder}
+  ```console
+  $ git clone https://github.com/paulo-lucas/books.git
+
+  $ cd books
 
   $ yarn
 
@@ -14,6 +18,20 @@ An app exploring Google Books api
 
 - Add your [Google Books API key](https://developers.google.com/books/docs/v1/using#APIKey) to `api_key.ts` in the root of the project
   ```ts
-  // api_key.ts
+  // books/api_key.ts
   export const key = '1234567890abcdefghijklmnopqrstuvwxyz';
+  ```
+
+- Start metro
+  ```sh
+  yarn start
+  ```
+
+- Run project on emulator or device
+  ```
+  $ yarn android
+  ```
+  or
+  ```
+  $ yarn ios
   ```
