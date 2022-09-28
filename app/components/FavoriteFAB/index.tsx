@@ -18,6 +18,7 @@ export const FavoriteFAB = () => {
       icon={{ name: 'bookmark', type: 'ionicons', color: iconColor }}
       size="large"
       placement="right"
+      testID="favorite-button"
     />
   );
 };
