@@ -123,7 +123,7 @@ exports[`app should renders correctly 1`] = `
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
                 replaceTheme={[Function]}
-                testID="RNE__ICON__CONTAINER_ACTION"
+                testID="toggle-theme-button"
                 updateTheme={[Function]}
               >
                 <View

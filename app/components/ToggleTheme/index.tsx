@@ -8,6 +8,11 @@ export const ToggleTheme = () => {
   const toggle = () => setMode(isDark() ? 'light' : 'dark');
 
   return (
-    <Icon name={isDark() ? 'moon' : 'sun'} type="feather" onPress={toggle} />
+    <Icon
+      name={isDark() ? 'moon' : 'sun'}
+      type="feather"
+      onPress={toggle}
+      testID="toggle-theme-button"
+    />
   );
 };
