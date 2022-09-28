@@ -20,6 +20,6 @@ jest.mock('@react-navigation/native', () => {
 describe('back button', () => {
   it('should render correctly', async () => {
     render(<BackButton />);
-    expect(screen.toJSON()).toMatchSnapshot('book');
+    expect(screen.toJSON()).toMatchSnapshot();
   });
 });
