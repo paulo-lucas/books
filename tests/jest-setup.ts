@@ -3,6 +3,7 @@ import { createTheme } from '@rneui/themed';
 
 const mockTheme = { colors: createTheme({}).lightColors };
 const mockNavigate = jest.fn();
+const mockGoBack = jest.fn();
 
 jest.mock('axios', () => {
   const actualAxios = jest.requireActual('axios');
@@ -13,11 +14,14 @@ jest.mock('axios', () => {
 });
 
 jest.mock('@react-navigation/native', () => {
-  const actualNav = jest.requireActual('@react-navigation/native');
+  const actualRNavigation = jest.requireActual('@react-navigation/native');
   return {
-    ...actualNav,
+    ...actualRNavigation,
+    useRoute: () => ({
+      params: {},
+    }),
     useNavigation: () => ({
-      navigate: mockNavigate,
+      navigation: { goBack: mockGoBack, navigate: mockNavigate },
     }),
   };
 });
