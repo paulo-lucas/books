@@ -3,7 +3,7 @@
 An app exploring Google Books api
 
 ## Instructions
-- Set up react native development environment, [docs](https://reactnative.dev/docs/environment-setup)
+- Set up react native development environment, [see docs](https://reactnative.dev/docs/environment-setup)
 
 - Run the following lines
   ```console
