@@ -19,7 +19,7 @@ An app exploring Google Books api
 - Add your [Google Books API key](https://developers.google.com/books/docs/v1/using#APIKey) to `api_key.ts` in the root of the project
   ```ts
   // books/api_key.ts
-  export const key = '1234567890abcdefghijklmnopqrstuvwxyz';
+  export const key = {YOUR_GOOGLE_API_KEY};
   ```
 
 - Start metro
