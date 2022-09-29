@@ -21,7 +21,7 @@ export const volumeQueryBuilder = (fields: VolumeSearchQuery): string => {
   }
 
   if (publisher) {
-    query += `+inpublisher${publisher}`;
+    query += `+inpublisher:${publisher}`;
   }
 
   query = query.replace(/^(\+|&)/, '');
