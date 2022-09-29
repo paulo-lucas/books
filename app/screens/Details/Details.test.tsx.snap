@@ -1,0 +1,539 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`details screen should render correctly 1`] = `
+<RNCSafeAreaView
+  edges={
+    Array [
+      "bottom",
+      "left",
+      "right",
+      "top",
+    ]
+  }
+  style={
+    Object {
+      "backgroundColor": undefined,
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingHorizontal": 20,
+        "paddingVertical": 20,
+      }
+    }
+  >
+    <View
+      accessibilityLabel="loading..."
+      accessibilityRole="none"
+      accessible={false}
+      onLayout={[Function]}
+      replaceTheme={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 2,
+            "overflow": "hidden",
+          },
+          Object {
+            "backgroundColor": "#bdc6cf",
+            "height": 12,
+            "width": "100%",
+          },
+          undefined,
+          Object {
+            "alignSelf": "center",
+            "aspectRatio": 0.5846153846153846,
+            "height": undefined,
+            "width": "80%",
+          },
+        ]
+      }
+      testID="RNE__Skeleton"
+      updateTheme={[Function]}
+    >
+      <View
+        collapsable={false}
+        style={
+          Object {
+            "backgroundColor": "rgb(166, 178, 190)",
+            "height": "100%",
+            "opacity": 1,
+            "width": "100%",
+          }
+        }
+      />
+    </View>
+    <View
+      accessibilityLabel="loading..."
+      accessibilityRole="none"
+      accessible={false}
+      onLayout={[Function]}
+      replaceTheme={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 2,
+            "overflow": "hidden",
+          },
+          Object {
+            "backgroundColor": "#bdc6cf",
+            "height": 12,
+            "width": "100%",
+          },
+          undefined,
+          Object {
+            "height": 24,
+            "marginTop": 20,
+            "width": "85%",
+          },
+        ]
+      }
+      testID="RNE__Skeleton"
+      updateTheme={[Function]}
+    >
+      <View
+        collapsable={false}
+        style={
+          Object {
+            "backgroundColor": "rgb(166, 178, 190)",
+            "height": "100%",
+            "opacity": 1,
+            "width": "100%",
+          }
+        }
+      />
+    </View>
+    <View
+      accessibilityLabel="loading..."
+      accessibilityRole="none"
+      accessible={false}
+      onLayout={[Function]}
+      replaceTheme={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 2,
+            "overflow": "hidden",
+          },
+          Object {
+            "backgroundColor": "#bdc6cf",
+            "height": 12,
+            "width": "100%",
+          },
+          undefined,
+          Object {
+            "height": 18,
+            "marginBottom": 20,
+            "marginTop": 10,
+            "width": "60%",
+          },
+        ]
+      }
+      testID="RNE__Skeleton"
+      updateTheme={[Function]}
+    >
+      <View
+        collapsable={false}
+        style={
+          Object {
+            "backgroundColor": "rgb(166, 178, 190)",
+            "height": "100%",
+            "opacity": 1,
+            "width": "100%",
+          }
+        }
+      />
+    </View>
+    <View
+      accessibilityLabel="loading..."
+      accessibilityRole="none"
+      accessible={false}
+      onLayout={[Function]}
+      replaceTheme={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 2,
+            "overflow": "hidden",
+          },
+          Object {
+            "backgroundColor": "#bdc6cf",
+            "height": 12,
+            "width": "100%",
+          },
+          undefined,
+          Object {
+            "height": 20,
+            "marginTop": 5,
+            "width": "100%",
+          },
+        ]
+      }
+      testID="RNE__Skeleton"
+      updateTheme={[Function]}
+    >
+      <View
+        collapsable={false}
+        style={
+          Object {
+            "backgroundColor": "rgb(166, 178, 190)",
+            "height": "100%",
+            "opacity": 1,
+            "width": "100%",
+          }
+        }
+      />
+    </View>
+    <View
+      accessibilityLabel="loading..."
+      accessibilityRole="none"
+      accessible={false}
+      onLayout={[Function]}
+      replaceTheme={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 2,
+            "overflow": "hidden",
+          },
+          Object {
+            "backgroundColor": "#bdc6cf",
+            "height": 12,
+            "width": "100%",
+          },
+          undefined,
+          Object {
+            "height": 20,
+            "marginTop": 5,
+            "width": "100%",
+          },
+        ]
+      }
+      testID="RNE__Skeleton"
+      updateTheme={[Function]}
+    >
+      <View
+        collapsable={false}
+        style={
+          Object {
+            "backgroundColor": "rgb(166, 178, 190)",
+            "height": "100%",
+            "opacity": 1,
+            "width": "100%",
+          }
+        }
+      />
+    </View>
+    <View
+      accessibilityLabel="loading..."
+      accessibilityRole="none"
+      accessible={false}
+      onLayout={[Function]}
+      replaceTheme={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 2,
+            "overflow": "hidden",
+          },
+          Object {
+            "backgroundColor": "#bdc6cf",
+            "height": 12,
+            "width": "100%",
+          },
+          undefined,
+          Object {
+            "height": 20,
+            "marginTop": 5,
+            "width": "100%",
+          },
+        ]
+      }
+      testID="RNE__Skeleton"
+      updateTheme={[Function]}
+    >
+      <View
+        collapsable={false}
+        style={
+          Object {
+            "backgroundColor": "rgb(166, 178, 190)",
+            "height": "100%",
+            "opacity": 1,
+            "width": "100%",
+          }
+        }
+      />
+    </View>
+    <View
+      accessibilityLabel="loading..."
+      accessibilityRole="none"
+      accessible={false}
+      onLayout={[Function]}
+      replaceTheme={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 2,
+            "overflow": "hidden",
+          },
+          Object {
+            "backgroundColor": "#bdc6cf",
+            "height": 12,
+            "width": "100%",
+          },
+          undefined,
+          Object {
+            "height": 20,
+            "marginTop": 5,
+            "width": "100%",
+          },
+        ]
+      }
+      testID="RNE__Skeleton"
+      updateTheme={[Function]}
+    >
+      <View
+        collapsable={false}
+        style={
+          Object {
+            "backgroundColor": "rgb(166, 178, 190)",
+            "height": "100%",
+            "opacity": 1,
+            "width": "100%",
+          }
+        }
+      />
+    </View>
+    <View
+      accessibilityLabel="loading..."
+      accessibilityRole="none"
+      accessible={false}
+      onLayout={[Function]}
+      replaceTheme={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 2,
+            "overflow": "hidden",
+          },
+          Object {
+            "backgroundColor": "#bdc6cf",
+            "height": 12,
+            "width": "100%",
+          },
+          undefined,
+          Object {
+            "height": 20,
+            "marginTop": 5,
+            "width": "100%",
+          },
+        ]
+      }
+      testID="RNE__Skeleton"
+      updateTheme={[Function]}
+    >
+      <View
+        collapsable={false}
+        style={
+          Object {
+            "backgroundColor": "rgb(166, 178, 190)",
+            "height": "100%",
+            "opacity": 1,
+            "width": "100%",
+          }
+        }
+      />
+    </View>
+    <View
+      accessibilityLabel="loading..."
+      accessibilityRole="none"
+      accessible={false}
+      onLayout={[Function]}
+      replaceTheme={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 2,
+            "overflow": "hidden",
+          },
+          Object {
+            "backgroundColor": "#bdc6cf",
+            "height": 12,
+            "width": "100%",
+          },
+          undefined,
+          Object {
+            "height": 20,
+            "marginTop": 5,
+            "width": "70%",
+          },
+        ]
+      }
+      testID="RNE__Skeleton"
+      updateTheme={[Function]}
+    >
+      <View
+        collapsable={false}
+        style={
+          Object {
+            "backgroundColor": "rgb(166, 178, 190)",
+            "height": "100%",
+            "opacity": 1,
+            "width": "100%",
+          }
+        }
+      />
+    </View>
+  </View>
+  <View
+    collapsable={false}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderRadius": 28,
+        "bottom": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "margin": 16,
+        "opacity": 0,
+        "position": "absolute",
+        "right": 0,
+        "transform": Array [
+          Object {
+            "scale": 0,
+          },
+        ],
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "overflow": "hidden",
+          },
+          Object {
+            "borderRadius": 2,
+          },
+          Object {
+            "borderRadius": 28,
+            "elevation": 4,
+          },
+          false,
+        ]
+      }
+      testID="RNE_BUTTON_WRAPPER"
+    >
+      <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "busy": false,
+            "disabled": false,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID="favorite-button"
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": undefined,
+              "borderColor": "#00DAC4",
+              "borderRadius": 2,
+              "borderWidth": 0,
+              "flexDirection": "row",
+              "height": 56,
+              "justifyContent": "center",
+              "padding": 16,
+              "paddingHorizontal": 10,
+              "width": 56,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "height": 56,
+                "marginHorizontal": 5,
+                "overflow": "hidden",
+                "padding": 16,
+                "width": 56,
+              }
+            }
+            testID="RNE__ICON__CONTAINER"
+          >
+            <View
+              accessibilityRole="button"
+              android_ripple={
+                Object {
+                  "borderless": false,
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "radius": -5,
+                }
+              }
+              disabled={false}
+              testID="RNE__ICON__CONTAINER_ACTION"
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "justifyContent": "center",
+                  }
+                }
+                testID="RNE__ICON"
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    Array [
+                      Object {
+                        "color": "#242424",
+                        "fontSize": 24,
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                      },
+                      Object {
+                        "fontFamily": "Material Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      Object {},
+                    ]
+                  }
+                  testID="RNE__ICON__Component"
+                >
+                  
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaView>
+`;
