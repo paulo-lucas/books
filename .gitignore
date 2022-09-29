@@ -63,4 +63,8 @@ buck-out/
 /ios/Pods/
 /vendor/bundle/
 
+# Unit test / coverage reports
+/coverage.data
+/coverage/
+
 api_key.ts
