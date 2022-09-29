@@ -3,8 +3,6 @@ import React from 'react';
 import { fireEvent, render, screen } from '../../../tests/test-utils';
 import { ToggleTheme } from './';
 
-console.log(ToggleTheme);
-
 const renderToggleTheme = () => render(<ToggleTheme />);
 
 describe('toggle theme button', () => {
