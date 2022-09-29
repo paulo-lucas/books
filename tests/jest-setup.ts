@@ -78,21 +78,23 @@ jest.mock('@app/services', () => ({
     },
   }),
   showVolume: () => ({
-    id: '2Y3iBgAAQBAJ',
-    volumeInfo: {
-      title: 'Descubra Nárnia',
-      authors: ['Christin Ditchfield'],
-      publisher: 'RBC Publicações',
-      publishedDate: '2010-04-02',
-      description: 'O Leão, a Feiticeira e o Guarda-Roupas',
+    data: {
+      id: '2Y3iBgAAQBAJ',
+      volumeInfo: {
+        title: 'Descubra Nárnia',
+        authors: ['Christin Ditchfield'],
+        publisher: 'RBC Publicações',
+        publishedDate: '2010-04-02',
+        description: 'O Leão, a Feiticeira e o Guarda-Roupas',
 
-      pageCount: 256,
-      categories: ['Religion'],
-      imageLinks: {
-        smallThumbnail:
-          'http://books.google.com/books/content?id=2Y3iBgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
-        thumbnail:
-          'http://books.google.com/books/content?id=2Y3iBgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
+        pageCount: 256,
+        categories: ['Religion'],
+        imageLinks: {
+          smallThumbnail:
+            'http://books.google.com/books/content?id=2Y3iBgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+          thumbnail:
+            'http://books.google.com/books/content?id=2Y3iBgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
+        },
       },
     },
   }),
