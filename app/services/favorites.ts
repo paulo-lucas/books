@@ -16,7 +16,8 @@ export const getFavorites = async (): Promise<Array<string>> => {
 export const storeFavorites = async (favoriteList: Array<string>) => {
   try {
     const value = JSON.stringify(favoriteList);
-    await AsyncStorage.setItem(favoritesKey, value);
+    const response = await AsyncStorage.setItem(favoritesKey, value);
+    return response;
   } catch (err) {
     Alert.alert('Error updating favorites.');
     throw err;
