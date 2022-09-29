@@ -5,7 +5,6 @@ import { BookDetailsProvider } from './';
 import { BooksContext } from '../BooksContext';
 import { BooksContextData } from '@app/interfaces/booksContext';
 import { BookInfo } from '@app/components';
-jest.useFakeTimers();
 
 const isFavorite = jest.fn();
 const toggleFavorite = jest.fn();
