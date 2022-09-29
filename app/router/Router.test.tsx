@@ -3,6 +3,11 @@ import { render, screen, waitFor } from '../../tests/test-utils';
 
 import Router from './index';
 
+jest.mock('@app/services', () => ({
+  getFavorites: () => [],
+  storeFavorites: () => {},
+}));
+
 describe('router', () => {
   it('should render home content', async () => {
     render(<Router />);
