@@ -75,6 +75,7 @@ export const BooksProvider: React.FC<PropsWithChildren> = ({ children }) => {
       onClearSearch();
       setFilterByFavorites(false);
       Alert.alert('Could not retrieve books.');
+      setRefreshing(false);
     }
   }, [books, favorites, filterByFavorites, orderBy, searchTextDebounce]);
 
